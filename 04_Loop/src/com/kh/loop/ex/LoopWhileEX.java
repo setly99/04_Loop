@@ -114,7 +114,10 @@ public static void method1_1() {//잘못된번호입력시 다시입력받도록
 		
 	}
 
-public static void method1_2() {//잘못된번호입력시 다시입력받도록하기.
+public static void method1_2() {//잘못된번호입력시 다시입력받도록하기.menu!=4버전-별로인듯.
+	//menu 0 초기화해놓고 menu가 종료인4로 나중에 설정된다고해도switch에서 case4들어가게됨.
+	//만약 case4구현안하고 default로 처리한다고치면 (종료4와 번호오류)를 구분못하게됨.
+	//따라서 case4구현해야하고 그러면 menu != 4비교가 의미크게없을듯.
 	
 	Scanner sc = new Scanner(System.in);
 	int menu = 0;
