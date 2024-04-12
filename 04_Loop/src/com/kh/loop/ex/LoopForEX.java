@@ -185,21 +185,39 @@ public class LoopForEX {
 		Scanner sc =new Scanner(System.in);
 		
 		while(true) {
-		
-		Random random = new Random();
-		int randomNum = random.nextInt(3) + 1; //1~3
-		System.out.println("숫자를 맞혀보세요.");
-		
-		int guest = sc.nextInt();
-		
-		if(guest == randomNum) {
-			System.out.println("축하합니다.");
-			break;
-		}
-		else {
-			System.out.println("틀렸습니다.");
+			
+			Random random = new Random();
+			int randomNum = random.nextInt(3) + 1; //1~3
+			System.out.println("숫자를 맞혀보세요.");
+			//for문안에 공격을 몇번까지 허용할 것인가 - 2번
+			int attackMax = 2;
+			for(int attack = 1; attack <= attackMax; attack++) {
+				System.out.println("공격을 " + attack + " 회 시도합니다.");
+				int guest = sc.nextInt();
+				
+				if(guest == randomNum) {
+					System.out.println("축하합니다.");
+					//return;//맞추면무한반복x
+					break;//1yes 2no 선택으로 종료
+				}
+				else {//else if로 정답보다 큰지작은지 힌트.
+					System.out.println("틀렸습니다.");
+				}
+			}
+			
 			System.out.println("정답은 " + randomNum + " 입니다.");
-		}
+			System.out.print("게임을 다시 시작하겠습니까? (1.yes / 2.no)");
+			int playAgain = sc.nextInt();
+			if(playAgain == 2) {
+				System.out.println("종료됨.");
+				break;
+			}else {//이상한숫자입력해도 넘어감.
+				System.out.println("===== 새 게임 =====");
+			}
+			/*
+			System.out.println("횟수초과,종료");
+			break;
+			*/
 		}
 		
 		
