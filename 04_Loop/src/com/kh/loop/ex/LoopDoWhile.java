@@ -7,9 +7,7 @@ public class LoopDoWhile {
 	 사용예제
 	 do{
 	 	수행될 문장;
-	 }while(조건식){
-	 
-	 }
+	 }while(조건식);
 	 
 	 */
 	public static void main(String[] args) {
@@ -18,7 +16,9 @@ public class LoopDoWhile {
 			System.out.println("숫자값 : " + count);
 			count++;
 			
-		}while(count <= 5);
-	}
-
+		}while(count < 5);
+		
+		}
 }
+
+
